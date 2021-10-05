@@ -2,19 +2,17 @@ syntax = "proto3";
 
 option java_multiple_files = true;
 option java_outer_classname = "SampleProto";
-option java_package = "com.levi.yoon.proto";
+option java_package = "kr.co.trevari.example.grpcwithids";
 
 package grpc.sample;
 
-message SampleRequest {
-  string userId = 1;
-  string message = 2;
+message Request {
 }
 
-message SampleResponse {
-  string message = 1;
+message IdResponse {
+  int64 userId = 1;
 }
 
-service SampleService {
-  rpc SampleCall (SampleRequest) returns (SampleResponse) {}
+service IdGenerator {
+  rpc SampleCall (Request) returns (IdResponse) {}
 }
