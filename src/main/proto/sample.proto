@@ -7,12 +7,13 @@ option java_package = "kr.co.trevari.example.grpcwithids";
 package grpc.sample;
 
 message Request {
+  int32 nodeId = 1;
 }
 
 message IdResponse {
-  int64 userId = 1;
+  int64 id = 1;
 }
 
 service IdGenerator {
-  rpc SampleCall (Request) returns (IdResponse) {}
+  rpc nextId (Request) returns (IdResponse) {}
 }
